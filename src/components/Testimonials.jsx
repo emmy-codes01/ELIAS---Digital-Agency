@@ -1,0 +1,144 @@
+import React, { useState, useEffect } from 'react';
+import { Star, Quote } from 'lucide-react';
+
+const TestimonialSlider = () => {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Samuel Smith A.",
+      position: "CEO",
+      company: "Smith XM Global",
+      content: "The service we received was exceptional. The team went above and beyond our expectations, delivering results that truly transformed our business. I couldn't be happier with the outcome!",
+      rating: 4
+    },
+    {
+      id: 2,
+      name: "Emmanuel O.",
+      position: "Co-founder",
+      company: "MX Technologies",
+      content: "Working with this team has been a game-changer for our company. Their expertise and dedication helped us achieve our goals in record time. I highly recommend their services to anyone looking to grow their business.",
+      rating: 4.5
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      position: "Operations Manager",
+      company: "Global Retail Group",
+      content: "From start to finish, the experience was seamless. The team was responsive, professional, and delivered exactly what we needed. Our performance metrics have improved significantly since implementation.",
+      rating: 5
+    },
+    {
+      id: 4,
+      name: "David Patel",
+      position: "CFO",
+      company: "NextGen Financial",
+      content: "Their strategic insights and attention to detail have been invaluable to our growth. The ROI we've seen since implementing their recommendations has exceeded all expectations. A truly exceptional team.",
+      rating: 5
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <Star
+          key={i}
+          size={16}
+          className={`${
+            i < Math.floor(rating)
+              ? 'text-yellow-400 fill-yellow-400'
+              : i < rating
+              ? 'text-yellow-400 fill-yellow-400 opacity-50'
+              : 'text-gray-300'
+          }`}
+        />
+      );
+    }
+    return stars;
+  };
+
+  return (
+    <div className="w-full bg-[#0a1f44] py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <p className="text-white font-semibold mb-4 uppercase tracking-wide">
+            Testimonials
+          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Hear what some of our clients have to say
+          </h2>
+          <p className="text-slate-400">
+            We love our clients – and they've got some pretty great things to say
+            about working with us.
+          </p>
+        </div>
+
+        <div className="relative overflow-hidden">
+          <div
+            className="transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            <div className="flex">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="w-full flex-shrink-0 px-4"
+                >
+                  <div className="bg-[#0c1b36] rounded-lg p-8 h-full">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-[#ff007f] rounded-full flex items-center justify-center mr-4">
+                        <Quote className="text-white" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-slate-400 text-sm">
+                          {testimonial.position} at {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mb-4 flex">
+                      {renderStars(testimonial.rating)}
+                    </div>
+                    <p className="text-slate-300 leading-relaxed">
+                      {testimonial.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-8 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                currentIndex === index ? 'bg-white' : 'bg-slate-600'
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TestimonialSlider;
