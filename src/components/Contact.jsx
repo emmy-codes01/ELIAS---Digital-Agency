@@ -42,7 +42,7 @@ const ContactSection = () => {
 
         <div className="text-center mt-16">
           <a 
-            href="#schedule"
+            href="https://calendly.com/elias-ag/30min"
             className="inline-flex items-center space-x-2 bg-slate-900 text-white px-8 py-4 rounded-2xl hover:bg-slate-800 transition-colors duration-200"
           >
             <span className="font-medium">Schedule a Call</span>

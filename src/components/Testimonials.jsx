@@ -98,7 +98,7 @@ const TestimonialSlider = () => {
                   key={testimonial.id}
                   className="w-full flex-shrink-0 px-4"
                 >
-                  <div className="bg-[#0c1b36] rounded-lg p-8 h-full">
+                  <div className="bg-[#0c1b36] rounded-2xl p-8 h-full">
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 bg-[#ff007f] rounded-full flex items-center justify-center mr-4">
                         <Quote className="text-white" size={24} />

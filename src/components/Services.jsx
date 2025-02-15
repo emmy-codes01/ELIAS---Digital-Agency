@@ -5,7 +5,6 @@ const ServicesSection = () => {
     "Logos and Branding",
     "Website Design",
     "Brand Guidelines",
-    "Webflow Development",
     "Newsletter Emails",
     "Website & Blog Copywriting",
     "Social Media Graphics",
@@ -52,15 +51,15 @@ const ServicesSection = () => {
           <div className="relative bg-[#0a1f44] rounded-3xl p-8 text-white">
             <div className="absolute top-8 right-8">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 50L50 30" stroke="#FFD700" strokeWidth="2"/>
-                <path d="M45 28L52 35" stroke="#FFD700" strokeWidth="2"/>
-                <path d="M52 28L45 35" stroke="#FFD700" strokeWidth="2"/>
+                <path d="M30 50L50 30" stroke="#FFD700" strokeWidth="2" />
+                <path d="M45 28L52 35" stroke="#FFD700" strokeWidth="2" />
+                <path d="M52 28L45 35" stroke="#FFD700" strokeWidth="2" />
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-6">Most popular</h3>
             <div className="space-y-4">
               {popularServices.map((service, index) => (
-                <div 
+                <div
                   key={index}
                   className="py-2 border-b border-white/10 hover:border-white/30 transition-colors cursor-pointer"
                 >
@@ -69,14 +68,14 @@ const ServicesSection = () => {
               ))}
             </div>
             <button className="mt-8 w-full bg-white text-[#0a1f44] py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              See Examples
+              <a href="https://wa.me/639132489550?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs.">Reach out to us directly</a>
             </button>
           </div>
 
           {/* Additional Services Grid */}
           <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8">
             {additionalServices.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="py-4 border-b border-gray-200 hover:border-gray-400 transition-colors cursor-pointer text-gray-800"
               >

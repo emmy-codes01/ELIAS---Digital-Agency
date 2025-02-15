@@ -35,7 +35,7 @@ const AboutUs = () => {
       </div>
 
       <div className="text-center mt-16">
-        <a href="#contact" className="bg-[#0a1f44] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-blue- transition">
+        <a href="https://wa.me/639132489550?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs." className="bg-[#0a1f44] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-blue- transition">
           Let’s Work Together
         </a>
       </div>
