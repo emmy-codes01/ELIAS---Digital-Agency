@@ -13,57 +13,59 @@ import About from './components/About';
 import FAQAccordion from './components/Faq';
 import Contact from './components/Contact';
 import { Factory } from 'lucide-react';
+import Background from './components/Background';
 const App = () => {
   return (
-    <div className='bg-gradient-to-r from-blue-100 via-pink-100 to-white'>
-     <section id="popup">
-    <PopUp />
-  </section>
+    <div>
+      <Background />
+      {/* <section id="popup">
+        <PopUp />
+      </section> */}
 
-  <section id="navbar">
-    <Navbar />
-  </section>
+      <section id="navbar">
+        <Navbar />
+      </section>
 
-  <section id="hero">
-    <Hero />
-  </section>
+      <section id="hero">
+        <Hero />
+      </section>
 
-  <section id="photo-slides">
-    <PhotoSlides />
-  </section>
+      <section id="photo-slides">
+        <PhotoSlides />
+      </section>
 
-  <section id="stats">
-    <Stats />
-  </section>
+      <section id="stats">
+        <Stats />
+      </section>
 
-  <section id="services">
-    <Services />
-  </section>
+      <section id="services">
+        <Services />
+      </section>
 
-  {/* <section id="improvement">
+      {/* <section id="improvement">
     <Improvement />
   </section> */}
 
-  <section id="testimonials">
-    <Testimonials />
-  </section>
-
-  <section id="about">
-    <About />
-  </section>
-
-  <section id="faq">
-    <FAQAccordion />
+      <section id="testimonials">
+        <Testimonials />
       </section>
-      
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="faq">
+        <FAQAccordion />
+      </section>
+
       <section id="contact">
-    <Contact />
-  </section>
+        <Contact />
+      </section>
 
 
-  <section id="footer">
-    <Footer />
-  </section>
+      <section id="footer">
+        <Footer />
+      </section>
     </div>
   )
 }

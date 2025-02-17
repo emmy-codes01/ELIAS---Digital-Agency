@@ -9,7 +9,7 @@ const AboutUs = () => {
           At <strong>ELIAS</strong>, we merge creativity with strategy to <b>help</b> you land those clients you dream of by craft stunning brand identities and seamless digital experiences. We’re passionate about helping you grow businesses through strategy, impactful design and technology.
         </p>
       </div>
-      
+
       <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-2">
         <div className="p-8 bg-gray-100 rounded-2xl shadow-sm flex flex-col gap-4">
           <h3 className="text-2xl font-semibold text-gray-900">Why Choose Us?</h3>
@@ -35,7 +35,7 @@ const AboutUs = () => {
       </div>
 
       <div className="text-center mt-16">
-        <a href="https://wa.me/639132489550?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs." className="bg-[#0a1f44] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-blue- transition">
+        <a href="https://wa.me/09132489550?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs." className="bg-[#0a1f44] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-blue- transition">
           Let’s Work Together
         </a>
       </div>

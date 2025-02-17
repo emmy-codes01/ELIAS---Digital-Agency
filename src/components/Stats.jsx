@@ -10,7 +10,7 @@ const StatsSection = () => {
           {/* Years of Experience */}
           <div className="flex flex-col items-center text-white relative">
             <Briefcase size={32} className="mb-2" />
-            <div className="text-4xl font-bold mb-2">5+</div>
+            <div className="text-4xl font-bold mb-2">3+</div>
             <div className="text-center">Years of experience</div>
             <div className="hidden md:block absolute right-0 top-0 h-full w-px bg-white/20" />
           </div>
@@ -18,7 +18,7 @@ const StatsSection = () => {
           {/* Trusted Clients */}
           <div className="flex flex-col items-center text-white relative">
             <Users size={32} className="mb-2" />
-            <div className="text-4xl font-bold mb-2">20+</div>
+            <div className="text-4xl font-bold mb-2">10+</div>
             <div className="text-center">Happy Clients</div>
             <div className="hidden md:block absolute right-0 top-0 h-full w-px bg-white/20" />
           </div>

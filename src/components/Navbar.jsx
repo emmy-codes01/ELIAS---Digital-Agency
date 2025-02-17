@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xs border-b border-gray-200/20">
+    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl bg-white/2 backdrop-blur-md rounded-full shadow-lg z-50">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4">
         <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
           <img src={logo} className="h-20" alt="Logo" />
@@ -26,7 +26,7 @@ const Header = () => {
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
         >
-          <span className="sr-only">Toggle menu</span>
+          <span className="sr-only transition-all">Toggle menu</span>
           {isOpen ? <X className="w-5 h-5" /> : <Menu size={30} />}
         </button>
 
@@ -36,7 +36,7 @@ const Header = () => {
             isOpen ? "block" : "hidden"
           }`}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg bg-white/80 backdrop-blur-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             <li>
               <Link
                 to="hero"
