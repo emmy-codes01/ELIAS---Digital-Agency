@@ -8,7 +8,7 @@ const HeroSection = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
   return (
-    <section className="py-25 md:pt-48 flex flex-col justify-center items-center gap-6 md:gap-">
+    <section className="flex flex-col justify-center items-center gap-6 md:gap-">
 
 
       <p className="text-xs my-2 opacity-60 text-center w-[60%] font-semibold">

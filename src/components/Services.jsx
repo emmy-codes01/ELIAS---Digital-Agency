@@ -27,28 +27,28 @@ const ServicesSection = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#121212] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[#ff007f] uppercase text-sm tracking-wider">Services</span>
-            <svg className="w-4 h-4 text-[#ff007f]" viewBox="0 0 16 16" fill="currentColor">
+        <div className="text-left flex flex-col mb-16">
+          <div className="flex items-center justify-items-start gap- mb-4">
+            <span className="text-white uppercase text-sm tracking-wider" style={{letterSpacing: '5px'}}>CORE SERVICES</span>
+            <svg className="w-3 h-3 text-[#007bff]" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 0L9.5 6.5H16L10.5 9.5L12 16L8 12L4 16L5.5 9.5L0 6.5H6.5L8 0Z" />
             </svg>
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            See what we can do for you
+          <h2 className="md:text-4xl text-[27px] text-left font-semibold text-white mb-4">
+            Exceeding Expectaions
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            We're your go-to creative partner, offering a range of services that will elevate your brand and keep things running smoothly.
+          <p className="text-white text-left opacity-65 text-sm md:w-full :max-w-2xl ">
+            We're your go-to creative partner, offering a range of services that will turn your brand around and keep things running smoothly.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Most Popular Section */}
-          <div className="relative bg-[#0a1f44] rounded-3xl p-8 text-white">
+          <div className="relative bg-[#121212] border rounded-3xl p-8 text-white">
             <div className="absolute top-8 right-8">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30 50L50 30" stroke="#FFD700" strokeWidth="2" />
@@ -67,8 +67,8 @@ const ServicesSection = () => {
                 </div>
               ))}
             </div>
-            <button className="mt-8 w-full bg-white text-[#0a1f44] py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              <a href="https://wa.me/639132489550?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs.">Reach out to us directly</a>
+            <button className="mt-8 w-full bg-gradient-to-tr from-[#007bff] to-[#ff007f] text-[#fff] py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+              <a href="https://wa.me/09049173033?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs.">Reach out to us directly</a>
             </button>
           </div>
 
@@ -77,7 +77,7 @@ const ServicesSection = () => {
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="py-4 border-b border-gray-200 hover:border-gray-400 transition-colors cursor-pointer text-gray-800"
+                className="py-4 border-b border-gray-200 hover:border-gray-400 transition-colors cursor-pointer text-white/50"
               >
                 {service}
               </div>

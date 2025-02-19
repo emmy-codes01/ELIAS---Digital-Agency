@@ -70,16 +70,16 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="w-full bg-[#0a1f44] py-16 px-4">
+    <div className="w-full py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-white font-semibold mb-4 uppercase tracking-wide">
+          <p className="text-white font-normal mb-4 uppercase tracking-wide text-sm" style={{letterSpacing: '5px'}}>
             Testimonials
           </p>
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Hear what some of our clients have to say
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">
+           What Our Clients says
           </h2>
-          <p className="text-slate-400">
+          <p className="text-white/50 text-xs">
             We love our clients – and they've got some pretty great things to say
             about working with us.
           </p>
@@ -98,9 +98,9 @@ const TestimonialSlider = () => {
                   key={testimonial.id}
                   className="w-full flex-shrink-0 px-4"
                 >
-                  <div className="bg-[#0c1b36] rounded-2xl p-8 h-full">
+                  <div className="bg-white/5 rounded-2xl p-8 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-[#ff007f] rounded-full flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-gradient-to-tr from-[#007bff] to-[#ff007f] rounded-full flex items-center justify-center mr-4">
                         <Quote className="text-white" size={24} />
                       </div>
                       <div>
@@ -137,7 +137,11 @@ const TestimonialSlider = () => {
           ))}
         </div>
       </div>
+      <div className='flex justify-center items-center'>
+        <hr className='mb-[-7rem] text-white/30 md:w-[80%] w-full'/>
+      </div>
     </div>
+    
   );
 };
 

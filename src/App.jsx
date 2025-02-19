@@ -12,12 +12,11 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import FAQAccordion from './components/Faq';
 import Contact from './components/Contact';
-import { Factory } from 'lucide-react';
-import Background from './components/Background';
+import HeroSection from './components/HeroSection';
 const App = () => {
   return (
-    <div>
-      <Background />
+    <div className='bg-[#121212] min-h-screen'>
+
       {/* <section id="popup">
         <PopUp />
       </section> */}
@@ -27,16 +26,13 @@ const App = () => {
       </section>
 
       <section id="hero">
-        <Hero />
+        <HeroSection />
       </section>
 
-      <section id="photo-slides">
-        <PhotoSlides />
-      </section>
 
-      <section id="stats">
+      {/* <section id="stats">
         <Stats />
-      </section>
+      </section> */}
 
       <section id="services">
         <Services />
@@ -46,21 +42,24 @@ const App = () => {
     <Improvement />
   </section> */}
 
+
+      <section id="why-us">
+        <About />
+      </section>
+
       <section id="testimonials">
         <Testimonials />
       </section>
 
-      <section id="about">
-        <About />
-      </section>
+
 
       <section id="faq">
         <FAQAccordion />
       </section>
 
-      <section id="contact">
+      {/* <section id="contact">
         <Contact />
-      </section>
+      </section> */}
 
 
       <section id="footer">

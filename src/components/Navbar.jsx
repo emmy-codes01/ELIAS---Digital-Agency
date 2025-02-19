@@ -1,106 +1,100 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "../assets/images/blue.png";
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Link } from "react-scroll";
+import logo from "../assets/images/black.png";
 
-const Header = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState("home");
+  const [activeLink, setActiveLink] = useState('Why Us');
 
-  const handleNavClick = (nav) => {
-    setActiveNav(nav);
-    setIsOpen(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = (title) => {
+    setActiveLink(title);
+    setIsOpen(false); // Close the mobile menu when a link is clicked
+  };
+
+  const navLinks = [
+    { title: 'Why Us', href: 'why-us' },
+    { title: 'Services', href: 'services' },
+    { title: 'Testimonials', href: 'testimonials' },
+    { title: 'FAQ', href: 'faq' },
+  ];
+
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl bg-white/2 backdrop-blur-md rounded-full shadow-lg z-50">
-      <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4">
-        <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
-          <img src={logo} className="h-20" alt="Logo" />
-        </Link>
+    <nav className="text-white px-6 fixed left-1/2 -translate-x-1/2 w-full max-w-full bg-white/1 backdrop-blur-lg shadow-lg z-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Desktop Navigation */}
+        <div className="flex justify-between items-center">
+          {/* Left Section: Hamburger and Logo */}
+          <div className="flex items-center space-x-4">
+            <a href="/" className="text-xl font-bold">
+              <img src={logo} alt="Logo" className="md:w-24 w-18 filter invert" />
+            </a>
+          </div>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-600 rounded-lg md:hidden hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-300"
-          aria-controls="navbar-menu"
-          aria-expanded={isOpen}
-        >
-          <span className="sr-only transition-all">Toggle menu</span>
-          {isOpen ? <X className="w-5 h-5" /> : <Menu size={30} />}
-        </button>
+          {/* Center Section: Nav Links */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.title}
+                to={link.href}
+                className={`relative transition-colors duration-200 cursor-pointer ${
+                  activeLink === link.title
+                    ? 'text-white'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+                onClick={() => handleLinkClick(link.title)}
+              >
+                {link.title}
+                {activeLink === link.title && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-tr from-[#007bff] to-[#ff007f] transform transition-transform duration-200" />
+                )}
+              </Link>
+            ))}
+          </div>
 
+          {/* Right Section: CTA Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-white transition-all duration-200"
+            onClick={toggleMenu}
+          >
+            <div className="transform transition-transform duration-200">
+              {isOpen ? <X size={34} /> : <Menu size={32} />}
+            </div>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
         <div
-          id="navbar-menu"
-          className={`items-center justify-between font-medium w-full md:flex md:w-auto md:order-1 ${
-            isOpen ? "block" : "hidden"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-            <li>
+          <div className="flex flex-col space-y-4 py-4">
+            {navLinks.map((link) => (
               <Link
-                to="hero"
+                key={link.title}
+                to={link.href}
                 smooth={true}
                 duration={500}
-                onClick={() => handleNavClick("home")}
-                className={`block py-2 px-3 rounded-lg transition-colors duration-200 hover:bg-white/80 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 cursor-pointer ${
-                  activeNav === "home" ? "text-blue-600" : "text-gray-700"
+                className={`transition-colors duration-200 transform cursor-pointer ${
+                  activeLink === link.title
+                    ? 'text-white pl-4 border-l-2 border-[#007bff]'
+                    : 'text-gray-300 hover:text-white hover:pl-4'
                 }`}
+                onClick={() => handleLinkClick(link.title)}
               >
-                Home
+                {link.title}
               </Link>
-            </li>
-            <li className="relative group">
-              <button className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded-lg transition-colors duration-200 hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
-                Programs
-                <svg
-                  className="w-2.5 h-2.5 ms-2.5 transform transition-transform duration-200 group-hover:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              {/* Dropdown menu */}
-              <div className="hidden group-hover:block absolute left-0 mt-2 w-64 bg-white/70 backdrop-blur-md border border-gray-200/20 rounded-lg shadow-lg">
-                <div className="p-3">
-                  <span className="block p-3 rounded-lg transition-colors duration-200 hover:bg-white/20 cursor-pointer">
-                    <div className="font-semibold">
-                      ELIAS Internship Program
-                    </div>
-                    <span className="text-sm text-gray-500">Coming Soon!</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            {["about", "testimonials", "contact"].map((item) => (
-              <li key={item}>
-                <Link
-                  to={item}
-                  smooth={true}
-                  duration={500}
-                  onClick={() => handleNavClick(item)}
-                  className={`block py-2 px-3 rounded-lg transition-colors duration-200 hover:bg-white/80 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 cursor-pointer ${
-                    activeNav === item ? "text-blue-600" : "text-gray-700"
-                  }`}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </Link>
-              </li>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </nav>
   );
 };
 
-export default Header;
+export default Navbar;

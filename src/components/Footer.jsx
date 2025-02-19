@@ -9,21 +9,21 @@ import {
   Phone, 
   MapPin 
 } from 'lucide-react';
-import logo from '../assets/images/black.png'
+import logo from '../assets/images/blue.png'
 import { Link } from "react-scroll";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-gray-100 z-20">
+    <footer className="border-gray-100 z-20">
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1">
-            <img src={logo} alt="logo" className='w-22'/>
-            <p className="text-gray-600 mb-4">
-              Creating digital experiences that transform businesses and inspire growth.
+            <img src={logo} alt="logo" className='w-22 '/>
+            <p className="text-gray-400 mb-4">
+              Amplifying businesses, Attracting Ideal Clients.
             </p>
             <div className="flex gap-4">
               <Link to="instagram" className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
@@ -37,13 +37,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Links</h2>
+            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Quick Links</h2>
             <ul className="space-y-2">
               {['About Us', 'Services', 'Projects', 'Programs', 'Careers'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item.toLowerCase().replace(' ', '-')} 
-                    className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
+                    className="text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
                   >
                     {item}
                   </Link>
@@ -54,13 +54,13 @@ const Footer = () => {
 
           {/* Services */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Services</h2>
+            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Services</h2>
             <ul className="space-y-2">
               {[ 'Web Development', 'Digital Marketing', 'Social Media Management', 'Mobile Apps', 'Consulting' ].map((service) => (
                 <li key={service}>
                   <Link 
                     to={service.toLowerCase().replace(' ', '-')} 
-                    className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
+                    className="text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
                   >
                     {service}
                   </Link>
@@ -71,13 +71,13 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Contact</h2>
+            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Contact</h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
                 <Phone className="text-gray-400" size={20} />
                 <a 
-                  href="tel:+1234567890" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
+                  href="tel:+2349132489550" 
+                  className="text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   +(234) 913-248-9550
                 </a>
@@ -86,7 +86,7 @@ const Footer = () => {
                 <Mail className="text-gray-400" size={20} />
                 <a 
                   href="mailto:hello.elias.agency@gmail.com" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   hello.elias.agency@gmail.com
                 </a>

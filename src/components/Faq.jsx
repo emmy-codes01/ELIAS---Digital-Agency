@@ -37,13 +37,13 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full bg-slate-50 py-16 px-4">
+    <div className="w-full py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-[#121212] font-semibold mb-4 uppercase tracking-wide">
+          <p className="text-2xl bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f] font-semibold mb-4 uppercase tracking-wide">
             FAQs
           </p>
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-sm text-white  mb-4">
             Your questions answered
           </h2>
         </div>
@@ -52,16 +52,16 @@ const FAQAccordion = () => {
           {faqs.map((faq, index) => (
             <div 
               key={faq.id}
-              className="border border-slate-200 rounded-2xl overflow-hidden"
+              className="rounded-2xl overflow-hidden"
             >
               <button
-                className="w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-slate-50 transition-colors duration-200"
+                className="w-full px-6 py-4 flex justify-between items-center cursor-pointer bg-white/5 hover:bg-white/15 transition-colors duration-200"
                 onClick={() => toggleAccordion(index)}
               >
-                <span className="text-left font-medium text-slate-900">
+                <span className="text-left font-medium text-white/70">
                   {faq.question}
                 </span>
-                <span className="ml-4 flex-shrink-0 text-slate-400">
+                <span className="ml-4 flex-shrink-0 rounded-2xl bg-gradient-to-tr from-[#007bff] to-[#ff007f]">
                   {openIndex === index ? (
                     <Minus size={20} />
                   ) : (
@@ -77,7 +77,7 @@ const FAQAccordion = () => {
                     : 'max-h-0 opacity-0'
                 } overflow-hidden`}
               >
-                <div className="px-6 py-4 bg-white text-slate-600 leading-relaxed">
+                <div className="px-6 py-4 bg-white/5 text-white/70 leading-relaxed">
                   {faq.answer}
                 </div>
               </div>

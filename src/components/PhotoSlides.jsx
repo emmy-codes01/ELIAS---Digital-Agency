@@ -13,16 +13,16 @@ const PhotoSlides = () => {
 
     return (
         <center>
-            <p className='font-semibold text-sm opacity-70 italic'>Trusted by leading busniesses over the world</p>
+            <p className='font-semibold text-xs opacity-70 italic text-white'>We are trusted by leading busniesses over the world!</p>
 
-            <div className="md:w-3/4 w-full overflow-hidden py-8 relative">
-                <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-blue-100 to-transparent z-10"></div>
-                <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+            <div className="md:w-3/4 w-full overflow-hidden py-3 relative">
+                <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#121212] to-transparent z-10"></div>
+                <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#121212] to-transparent z-10"></div>
                 <div className="w-full flex">
                     <div className="flex min-w-max animate-scroll">
                         {duplicatedTopRow.map((src, index) => (
                             <div key={index} className="flex-none w-32 md:w-60 h-28 shrink-0">
-                                <img src={src} alt="Slide" className="w-full h-full object-cover opacity-75 filter grayscale" />
+                                <img src={src} alt="Slide" className="filter invert w-full h-full object-cover opacity-75" />
                             </div>
                         ))}
                     </div>
