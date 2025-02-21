@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 
 const AboutUs = () => {
+
+
+
+  useEffect(() => {
+    // ScrollReveal setup
+    ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        opacity: 0,
+        origin: 'bottom',
+        reset: true, // Optional: Reset animation on scroll back
+        scale: 0.8, // Optional: You can scale the element
+    });
+}, []);
+
+
+
+
   return (
     <section className="py-10 px-6 md:px-12 lg:px-20">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Who We Are</h2>
-        <p className="text-sm text-white/50 mb-12 leading-relaxed">
+        <p className="text-sm text-white/50 mb-12 leading-relaxed reveal">
           At <strong>ELIAS</strong>, we merge creativity with strategy to <b>help</b> you land those clients you dream of by crafting high-converting websites, brand identities and strong marketing strategies. We’re passionate about helping you grow businesses through strategy, impactful design and technology.
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-2">
+      <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-2 reveal">
         <div className="p-8 bg-white/5 rounded-2xl shadow-sm flex flex-col gap-4">
           <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f]">Why Choose Us?</h3>
           <ul className="text-white space-y-2">
@@ -23,7 +44,7 @@ const AboutUs = () => {
           </ul>
         </div>
 
-        <div className="p-8 bg-white/5 rounded-2xl shadow-sm flex flex-col gap-4">
+        <div className="p-8 bg-white/5 rounded-2xl shadow-sm flex flex-col gap-4 reveal">
           <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-bl from-[#007bff] to-[#ff007f]">Our Services</h3>
           <ul className="text-white space-y-2">
             <li>✔ Brand Identity & Logo Design</li>

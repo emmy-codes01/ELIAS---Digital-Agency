@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 import { Plus, Minus } from 'lucide-react';
 
 const FAQAccordion = () => {
@@ -29,12 +30,40 @@ const FAQAccordion = () => {
       id: 5,
       question: "What makes your agency different from others?",
       answer: "We stand out through our integrated approach to digital marketing and design. Unlike agencies that offer isolated services, we ensure all digital strategies work together cohesively. We assign dedicated project managers, provide transparent reporting, and focus on delivering measurable results. Our team stays current with industry trends and technologies to provide innovative solutions that drive real business growth."
-    }
+    },
+    {
+      id: 6,
+      question: "What makes your agency different from others?",
+      answer: "We stand out through our integrated approach to digital marketing and design. Unlike agencies that offer isolated services, we ensure all digital strategies work together cohesively. We assign dedicated project managers, provide transparent reporting, and focus on delivering measurable results. Our team stays current with industry trends and technologies to provide innovative solutions that drive real business growth."
+    },
+    {
+      id: 5,
+      question: "What makes your agency different from others?",
+      answer: "We stand out through our integrated approach to digital marketing and design. Unlike agencies that offer isolated services, we ensure all digital strategies work together cohesively. We assign dedicated project managers, provide transparent reporting, and focus on delivering measurable results. Our team stays current with industry trends and technologies to provide innovative solutions that drive real business growth."
+    },
+    
   ];
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+
+
+
+  useEffect(() => {
+    // ScrollReveal setup
+    ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        opacity: 0,
+        origin: 'bottom',
+        reset: true, // Optional: Reset animation on scroll back
+        scale: 0.8, // Optional: You can scale the element
+    });
+}, []);
 
   return (
     <div className="w-full py-16 px-4">
@@ -52,7 +81,7 @@ const FAQAccordion = () => {
           {faqs.map((faq, index) => (
             <div 
               key={faq.id}
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl overflow-hidden reveal"
             >
               <button
                 className="w-full px-6 py-4 flex justify-between items-center cursor-pointer bg-white/5 hover:bg-white/15 transition-colors duration-200"

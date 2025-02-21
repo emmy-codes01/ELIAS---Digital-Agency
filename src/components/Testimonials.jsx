@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star, Quote } from 'lucide-react';
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 
 const TestimonialSlider = () => {
   const testimonials = [
@@ -69,8 +70,27 @@ const TestimonialSlider = () => {
     return stars;
   };
 
+
+
+
+
+  useEffect(() => {
+    // ScrollReveal setup
+    ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        opacity: 0,
+        origin: 'bottom',
+        reset: true, // Optional: Reset animation on scroll back
+        scale: 0.8, // Optional: You can scale the element
+    });
+  }, []);
+  
+
   return (
-    <div className="w-full py-16 px-4">
+    <div className="w-full py-16 px-4 reveal">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-white font-normal mb-4 uppercase tracking-wide text-sm" style={{letterSpacing: '5px'}}>

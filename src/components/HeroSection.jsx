@@ -1,5 +1,5 @@
-import React from 'react'
-// import '../fonts/POPPINS-REGULAR.TTF'
+import React, { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 import Smithxm from '../assets/images/clients/smith.png'
 import mx from '../assets/images/clients/mx.png'
 import oasis from '../assets/images/clients/OASIS.png'
@@ -11,13 +11,30 @@ import r15 from '../assets/images/r15.png';
 import r16 from '../assets/images/r16.png';
 import r17 from '../assets/images/r17.png';
 
-
 const HeroSection = () => {
-
     const topRowImages = [r17, r16, r15, r11, r12, r13, r14];
     const duplicatedTopRow = [...topRowImages, ...topRowImages, ...topRowImages, ...topRowImages];
+
+
+
+    useEffect(() => {
+        // ScrollReveal setup
+        ScrollReveal().reveal('.reveal', {
+            distance: '50px',
+            duration: 1000,
+            delay: 200,
+            easing: 'ease-in-out',
+            opacity: 0,
+            origin: 'bottom',
+            reset: true, // Optional: Reset animation on scroll back
+            scale: 0.8, // Optional: You can scale the element
+        });
+    }, []);
+
+
+
     return (
-        <div className="h-full md:h-[100vh] flex flex-col gap-10 justify-center items-left mx-10 md:mx-80 pt-36">
+        <div className="h-full md:h-[100vh] flex flex-col gap-10 justify-center items-left mx-10 md:mx-80 pt-36 reveal">
             <div className="heading flex flex-col gap-4 justify-center items-left text-left">
                 <p className='poppins text-4xl md:text-5xl text-white text-center font-semibold md:font-bold'>
                     Helping Businesses & Personal Brands Land Their <span className='bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f]'>Dream Clients!</span>
@@ -31,26 +48,22 @@ const HeroSection = () => {
                 <div>
                     <a href="https://calendly.com/elias-ag/30min" className='px-4 rounded-full py-3 text-white bg-gradient-to-tr from-[#007bff] to-[#ff007f] hover:scale-[1.05] transition'>Claim FREE Consultation now!</a>
                 </div>
-                
+
                 <div className="clients flex gap-3 items-center">
-                    <div className="pics flex">
-                        <img src={Smithxm} alt="smith_xm" className='rounded-full w-8 h-8 ' />
-                        <img src={mx} alt="smith_xm" className='rounded-full w-8 h-8 ml-[-1rem] border-black border' />
-                        <img src={oasis} alt="smith_xm" className='rounded-full w-8 h-8 ml-[-1rem]' />
+                    <div className="pics flex object-cover"  >
+                        <img src={Smithxm} alt="smith_xm" className='rounded-full w-8 h-8 blur-xs' onLoad={(e) => e.target.classList.remove('blur-xs')} />
+                        <img src={mx} alt="smith_xm" className='rounded-full w-8 h-8 ml-[-1rem] blur-xs' onLoad={(e) => e.target.classList.remove('blur-xs')} />
+                        <img src={oasis} alt="smith_xm" className='rounded-full w-8 h-8 ml-[-1rem] blur-xs' onLoad={(e) => e.target.classList.remove('blur-xs')} />
                     </div>
                     <div className="words flex flex-col">
                         <p className='text-white text-xs'>10+</p>
                         <p className='opacity-65 text-white text-xs'>Happy Clients</p>
                     </div>
                 </div>
-
-                
             </div>
 
-
-
             <center>
-                <p className='font-semibold text-xs opacity-70 italic text-white'>We are trusted by leading busniesses over the world!</p>
+                <p className='font-semibold text-xs opacity-70 italic text-white'>We are trusted by leading businesses worldwide!</p>
 
                 <div className="md:w-3/4 w-full overflow-hidden py-3 relative">
                     <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#121212] to-transparent z-10"></div>
@@ -59,26 +72,32 @@ const HeroSection = () => {
                         <div className="flex min-w-max animate-scroll">
                             {duplicatedTopRow.map((src, index) => (
                                 <div key={index} className="flex-none w-32 md:w-60 h-28 shrink-0">
-                                    <img src={src} alt="Slide" className="filter invert w-full h-full object-cover opacity-75" />
+                                    <img
+                                        src={src}
+                                        alt="Slide"
+                                        className="filter invert w-full h-full object-cover opacity-75 blur-xs"
+                                        // style={{ objectFit: 'cover', filter: 'blur(10px)' }}
+                                        onLoad={(e) => e.target.classList.remove('blur-xs')}
+                                    />
                                 </div>
                             ))}
                         </div>
                     </div>
                     <style>
                         {`
-                    @keyframes scroll {
-                        from {
-                            transform: translateX(0);
-                        }
-                        to {
-                            transform: translateX(-100%);
-                        }
-                    }
-                    .animate-scroll {
-                        display: flex;
-                        animation: scroll 40s linear infinite;
-                    }
-                `}
+              @keyframes scroll {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  transform: translateX(-100%);
+                }
+              }
+              .animate-scroll {
+                display: flex;
+                animation: scroll 40s linear infinite;
+              }
+            `}
                     </style>
                 </div>
             </center>
@@ -86,4 +105,4 @@ const HeroSection = () => {
     )
 }
 
-export default HeroSection
+export default HeroSection;

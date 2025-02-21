@@ -1,72 +1,85 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import { useState, useEffect } from "react";
+import LoadingScreen from "./components/LoadingScreen";
+import React from "react";
 import Navbar from "./components/Navbar";
-import Hero from './components/Hero';
-import PhotoSlides from './components/PhotoSlides';
-import Footer from './components/Footer';
-import PopUp from './components/Popup';
-import Stats from './components/Stats'
-import Services from './components/Services'
-import Improvement from './components/Improvement';
-import Testimonials from './components/Testimonials';
-import About from './components/About';
-import FAQAccordion from './components/Faq';
-import Contact from './components/Contact';
-import HeroSection from './components/HeroSection';
+import HeroSection from "./components/HeroSection";
+import Services from "./components/Services";
+import About from "./components/About";
+import Testimonials from "./components/Testimonials";
+import FAQAccordion from "./components/Faq";
+import Footer from "./components/Footer";
+
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsFading(true);
+      setTimeout(() => setIsLoading(false), 500);
+    };
+
+    // Check if all images are loaded
+    const images = document.querySelectorAll("img");
+    let loadedCount = 0;
+
+    if (images.length === 0) {
+      handleLoad(); // No images, load immediately
+    } else {
+      images.forEach((img) => {
+        if (img.complete) {
+          loadedCount++;
+        } else {
+          img.onload = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              handleLoad();
+            }
+          };
+        }
+      });
+    }
+  }, []);
+
   return (
-    <div className='bg-[#121212] min-h-screen'>
+    <>
+      {isLoading ? (
+        <LoadingScreen isFading={isFading} />
+      ) : (
+        <div className="bg-[#121212] min-h-screen transition-opacity duration-500">
+          <section id="navbar">
+            <Navbar />
+          </section>
 
-      {/* <section id="popup">
-        <PopUp />
-      </section> */}
+          <section id="hero">
+            <HeroSection />
+          </section>
 
-      <section id="navbar">
-        <Navbar />
-      </section>
+          <section id="services">
+            <Services />
+          </section>
 
-      <section id="hero">
-        <HeroSection />
-      </section>
+          <section id="why-us">
+            <About />
+          </section>
 
+          <section id="testimonials">
+            <Testimonials />
+          </section>
 
-      {/* <section id="stats">
-        <Stats />
-      </section> */}
+          <section id="faq">
+            <FAQAccordion />
+          </section>
 
-      <section id="services">
-        <Services />
-      </section>
+          <section id="footer">
+            <Footer />
+          </section>
+        </div>
+      )}
+    </>
+  );
+};
 
-      {/* <section id="improvement">
-    <Improvement />
-  </section> */}
-
-
-      <section id="why-us">
-        <About />
-      </section>
-
-      <section id="testimonials">
-        <Testimonials />
-      </section>
-
-
-
-      <section id="faq">
-        <FAQAccordion />
-      </section>
-
-      {/* <section id="contact">
-        <Contact />
-      </section> */}
-
-
-      <section id="footer">
-        <Footer />
-      </section>
-    </div>
-  )
-}
-
-export default App
+export default App;
+  

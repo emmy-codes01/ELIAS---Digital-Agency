@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 
 const ServicesSection = () => {
   const popularServices = [
@@ -26,6 +27,52 @@ const ServicesSection = () => {
     "And more.."
   ];
 
+
+
+
+  useEffect(() => {
+    // ScrollReveal setup
+    ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        opacity: 0,
+        origin: 'bottom',
+        reset: true, // Optional: Reset animation on scroll back
+        scale: 0.8, // Optional: You can scale the element
+    });
+
+    ScrollReveal().reveal('.reveal1', {
+      distance: '50px',
+      duration: 1000,
+      delay: 200,
+      easing: 'ease-in-out',
+      opacity: 0,
+      origin: 'left',
+      reset: true, // Optional: Reset animation on scroll back
+      scale: 0.8, // Optional: You can scale the element
+  });
+
+  ScrollReveal().reveal('.reveal2', {
+    distance: '50px',
+    duration: 1000,
+    delay: 200,
+    easing: 'ease-in-out',
+    opacity: 0,
+    origin: 'right',
+    reset: true, // Optional: Reset animation on scroll back
+    scale: 0.8, // Optional: You can scale the element
+});
+
+
+
+
+}, []);
+
+
+
+
   return (
     <div className="bg-[#121212] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -46,9 +93,9 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
           {/* Most Popular Section */}
-          <div className="relative bg-[#121212] border rounded-3xl p-8 text-white">
+          <div className="relative bg-[#121212] border rounded-3xl p-8 text-white reveal1">
             <div className="absolute top-8 right-8">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30 50L50 30" stroke="#FFD700" strokeWidth="2" />
@@ -73,7 +120,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Additional Services Grid */}
-          <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+          <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 reveal2">
             {additionalServices.map((service, index) => (
               <div
                 key={index}
