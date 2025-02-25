@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 import Smithxm from '../assets/images/clients/smith.png'
 import mx from '../assets/images/clients/mx.png'
@@ -31,22 +31,58 @@ const HeroSection = () => {
         });
     }, []);
 
+    // TYPING EFFECT
+    const [charIndex, setCharIndex] = useState(0);
+    const [isTyping, setIsTyping] = useState(true);
+    const dreamText = "Dream Clients!";
 
+    useEffect(() => {
+        if (isTyping && charIndex < dreamText.length) {
+            // Type each character with a slight delay
+            const timer = setTimeout(() => {
+                setCharIndex(charIndex + 1);
+            }, 100);
+            return () => clearTimeout(timer);
+        } else if (isTyping && charIndex === dreamText.length) {
+            // Pause at the end of typing before deleting
+            const timer = setTimeout(() => {
+                setIsTyping(false);
+            }, 1500);
+            return () => clearTimeout(timer);
+        } else if (!isTyping && charIndex > 0) {
+            // Delete each character with a slight delay
+            const timer = setTimeout(() => {
+                setCharIndex(charIndex - 1);
+            }, 50);
+            return () => clearTimeout(timer);
+        } else if (!isTyping && charIndex === 0) {
+            // Pause when empty before starting to type again
+            const timer = setTimeout(() => {
+                setIsTyping(true);
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [charIndex, isTyping]);
 
     return (
         <div className="h-full md:h-[100vh] flex flex-col gap-10 justify-center items-left mx-10 md:mx-80 pt-36 reveal">
             <div className="heading flex flex-col gap-4 justify-center items-left text-left">
-                <p className='poppins text-4xl md:text-5xl text-white text-center font-semibold md:font-bold'>
-                    Helping Businesses & Personal Brands Land Their <span className='bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f]'>Dream Clients!</span>
+                <p className='text-[27px] md:text-5xl text-white text-center font-semibold md:font-bold'>
+                    Helping Businesses & Personal Brands Land Their{" "}
+                    <span className="text-blue-400">
+                        {dreamText.substring(0, charIndex)}
+                        <span className="animate-pulse">|</span>
+                    </span>
                 </p>
-                <p className='text-white opacity-70 text-sm text-center'>
+
+                <p className='text-white opacity-70 text-xs text-center'>
                     We help businesses like yours grow with stunning websites, and powerful marketing strategies, and social media solutions that deliver real results.
                 </p>
             </div>
 
             <div className="cta flex flex-col gap-10 md:flex-row justify-center items-center">
                 <div>
-                    <a href="https://calendly.com/elias-ag/30min" className='px-4 rounded-full py-3 text-white bg-gradient-to-tr from-[#007bff] to-[#ff007f] hover:scale-[1.05] transition'>Claim FREE Consultation now!</a>
+                    <a href="https://calendly.com/elias-ag/30min" className='text-sm px-4 rounded-full py-3 text-white bg-[#007bff] hover:scale-[1.05] transition'>Claim FREE Consultation now!</a>
                 </div>
 
                 <div className="clients flex gap-3 items-center">

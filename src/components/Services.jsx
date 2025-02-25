@@ -114,7 +114,7 @@ const ServicesSection = () => {
                 </div>
               ))}
             </div>
-            <button className="mt-8 w-full bg-gradient-to-tr from-[#007bff] to-[#ff007f] text-[#fff] py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+            <button className="mt-8 w-full bg-[#007bff] py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
               <a href="https://wa.me/09049173033?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20creative%20services.%20Looking%20forward%20to%20discussing%20how%20you%20can%20help%20with%20my%20project%20needs.">Reach out to us directly</a>
             </button>
           </div>

@@ -47,7 +47,7 @@ const App = () => {
       {isLoading ? (
         <LoadingScreen isFading={isFading} />
       ) : (
-        <div className="bg-[#121212] min-h-screen transition-opacity duration-500">
+        <div className="bg-[#121212] font-montserrat min-h-screen transition-opacity duration-500">
           <section id="navbar">
             <Navbar />
           </section>

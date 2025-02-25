@@ -96,7 +96,7 @@ const TestimonialSlider = () => {
           <p className="text-white font-normal mb-4 uppercase tracking-wide text-sm" style={{letterSpacing: '5px'}}>
             Testimonials
           </p>
-          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-[#007bff] mb-4">
            What Our Clients says
           </h2>
           <p className="text-white/50 text-xs">
@@ -120,7 +120,7 @@ const TestimonialSlider = () => {
                 >
                   <div className="bg-white/5 rounded-2xl p-8 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-tr from-[#007bff] to-[#ff007f] rounded-full flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-[#007bff] rounded-full flex items-center justify-center mr-4">
                         <Quote className="text-white" size={24} />
                       </div>
                       <div>

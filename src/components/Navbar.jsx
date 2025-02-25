@@ -74,7 +74,7 @@ const Navbar = () => {
                 >
                   {link.title}
                   {activeLink === link.title && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-tr from-[#007bff] to-[#ff007f] transform transition-transform duration-200" />
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#fff] duration-200" />
                   )}
                 </Link>
               ))}

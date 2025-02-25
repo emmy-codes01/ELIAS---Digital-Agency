@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Quick Links</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Quick Links</h2>
             <ul className="space-y-2">
               {['About Us', 'Services', 'Projects', 'Programs', 'Careers'].map((item) => (
                 <li key={item}>
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Services</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Services</h2>
             <ul className="space-y-2">
               {[ 'Web Development', 'Digital Marketing', 'Social Media Management', 'Mobile Apps', 'Consulting' ].map((service) => (
                 <li key={service}>
@@ -71,7 +71,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="col-span-1">
-            <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#007bff] to-[#ff007f] mb-4">Contact</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Contact</h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
                 <Phone className="text-gray-400" size={20} />

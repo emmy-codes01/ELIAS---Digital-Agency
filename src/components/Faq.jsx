@@ -69,7 +69,7 @@ const FAQAccordion = () => {
     <div className="w-full py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-2xl bg-clip-text text-transparent bg-gradient-to-tr from-[#007bff] to-[#ff007f] font-semibold mb-4 uppercase tracking-wide">
+          <p className="text-2xl bg-clip-text text-transparent bg-[#007bff] font-semibold mb-4 uppercase tracking-wide">
             FAQs
           </p>
           <h2 className="text-sm text-white  mb-4">
@@ -90,7 +90,7 @@ const FAQAccordion = () => {
                 <span className="text-left font-medium text-white/70">
                   {faq.question}
                 </span>
-                <span className="ml-4 flex-shrink-0 rounded-2xl bg-gradient-to-tr from-[#007bff] to-[#ff007f]">
+                <span className="ml-4 flex-shrink-0 rounded-2xl bg-[#007bff]">
                   {openIndex === index ? (
                     <Minus size={20} />
                   ) : (
