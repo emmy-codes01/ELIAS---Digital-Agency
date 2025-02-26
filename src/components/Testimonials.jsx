@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Star, Quote } from 'lucide-react';
 import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
@@ -9,7 +10,7 @@ const TestimonialSlider = () => {
       name: "Samuel Smith A.",
       position: "CEO",
       company: "Smith XM Global",
-      content: "The service we received was exceptional. The team went above and beyond our expectations, delivering results that truly transformed our business. I couldn't be happier with the outcome!",
+      content: "We were thoroughly impressed with the service we received! The team's designs were spot on, and they really helped us boost our online confidence. We've seen a significant increase in traffic and engagement, and we couldn't be happier with the results. Their expertise and dedication truly made all the difference!",
       rating: 4
     },
     {
@@ -100,7 +101,7 @@ const TestimonialSlider = () => {
            What Our Clients says
           </h2>
           <p className="text-white/50 text-xs">
-            We love our clients – and they've got some pretty great things to say
+            We love our clients – and they&#39;ve got some pretty great things to say
             about working with us.
           </p>
         </div>
@@ -121,7 +122,7 @@ const TestimonialSlider = () => {
                   <div className="bg-white/5 rounded-2xl p-8 h-full">
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 bg-[#007bff] rounded-full flex items-center justify-center mr-4">
-                        <Quote className="text-white" size={24} />
+                        <Quote className="text-white" size={16} />
                       </div>
                       <div>
                         <h3 className="text-white font-semibold">

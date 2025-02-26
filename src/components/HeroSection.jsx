@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 import Smithxm from '../assets/images/clients/smith.png'
